@@ -20,6 +20,9 @@ FileUtils.chdir APP_ROOT do
   file.puts "SLACK_WEBHOOK_URL = '#{url}'"
   file.close
 
+  puts "\n== Compiling assets =="
+  system! 'bin/rails assets:precompile'
+
   puts "\n== Preparing database =="
   system! 'bin/rails db:prepare'
 
