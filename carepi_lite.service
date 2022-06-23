@@ -1,0 +1,12 @@
+[Unit]
+Description=CaRePi Lite
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/yamalabo/CaRePi_lite
+ExecStart=/usr/local/bin/docker-compose up
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
