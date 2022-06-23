@@ -2,6 +2,9 @@
 
 [CaRePi](https://github.com/shmn7iii/CaRePi) の軽量版
 
+Ruby: 3.1.2  
+Rails: 7.0.3
+
 ## Setup
 
 Spec: Ubuntu 20.04
