@@ -35,7 +35,7 @@ $ git clone --recursive https://github.com/shmn7iii/CaRePi_lite.git
 
 ```
 [CaRePi]
-api_url = http://localhost:3000/session
+api_url = http://localhost/session
 service_code = 0x010B
 block_code = 0
 usb_bus_device = xxx:xxx:xxx
