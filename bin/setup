@@ -13,13 +13,6 @@ FileUtils.chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
-  puts "\n== Setting configure =="
-  print 'Slack WwbHook URL > '
-  url = gets.chomp
-  file = File.open('.env', 'a')
-  file.puts "SLACK_WEBHOOK_URL = '#{url}'"
-  file.close
-
   puts "\n== Setting crontab =="
   system! 'bin/bundle exec whenever --update-crontab'
 
