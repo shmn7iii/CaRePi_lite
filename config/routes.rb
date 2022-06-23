@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'users#index'
   resources :users
-  post 'sessions/new'
+  post '/session', to: 'sessions#new'
 end
