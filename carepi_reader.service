@@ -1,0 +1,13 @@
+[Unit]
+Description=CaRePi Reader [Lite]
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/yamalabo/CaRePi_lite/CaRePi_reader
+ExecStart=/bin/bash launch.sh
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
