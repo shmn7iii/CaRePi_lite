@@ -1,3 +1,6 @@
 [submodule "CaRePi_reader"]
 	path = CaRePi_reader
 	url = https://github.com/shmn7iii/CaRePi_reader.git
+[submodule "CaRePi_slack"]
+	path = CaRePi_slack
+	url = https://github.com/motoha0827/CaRePi_slack.git
