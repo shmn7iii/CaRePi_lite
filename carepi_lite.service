@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/home/yamalabo/CaRePi_lite
 ExecStart=/usr/local/bin/docker-compose up
+WorkingDirectory=/home/ubuntu/CaRePi_lite
 Restart=on-failure
 
 [Install]

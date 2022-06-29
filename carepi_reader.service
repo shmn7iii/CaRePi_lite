@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/home/yamalabo/CaRePi_lite/CaRePi_reader
+WorkingDirectory=/home/ubuntu/CaRePi_lite/CaRePi_reader
 ExecStart=/bin/bash launch.sh
 Environment=PYTHONUNBUFFERED=1
 Restart=on-failure

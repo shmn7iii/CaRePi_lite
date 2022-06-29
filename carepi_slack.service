@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/home/yamalabo/CaRePi_lite/CaRePi_slack
+WorkingDirectory=/home/ubuntu/CaRePi_lite/CaRePi_slack
 ExecStart=/usr/bin/python3 app.py
 Environment=PYTHONUNBUFFERED=1
 Restart=on-failure
