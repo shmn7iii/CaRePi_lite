@@ -13,8 +13,9 @@ sudo apt-get install -y uidmap
 dockerd-rootless-setuptool.sh install
 echo 'export PATH=/usr/bin:$PATH' > ~/.bashrc
 echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > ~/.bashrc
+source ~/.bashrc
 sudo setcap cap_net_bind_service=ep $HOME/bin/rootlesskit
-sudo echo 'net.ipv4.ip_unprivileged_port_start=0' > /etc/sysctl.conf
+sudo echo 'net.ipv4.ip_unprivileged_port_start=0' > sudo /etc/sysctl.conf
 sudo sysctl --system
 
 
@@ -43,8 +44,10 @@ sed -i -e "/SLACK_APP_TOKEN/c SLACK_APP_TOKEN = $SLACK_APP_TOKEN" ~/CaRePi_lite/
 
 # API
 cd ~/CaRePi_lite
+echo -n "Put config/master.key... > (y)"
+read str
 docker compose up -d
-docker compose exec rails ./bin/setup
+docker compose exec rails bin/setup
 docker compose down
 
 
