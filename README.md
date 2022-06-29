@@ -8,5 +8,5 @@ Rails: 7.0.3
 ## Setup
 
 ```bash
-$ ./setup_for_raspi.sh
+$ bash https://raw.githubusercontent.com/shmn7iii/CaRePi_lite/main/setup_for_raspi.sh
 ```
