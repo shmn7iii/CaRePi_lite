@@ -64,7 +64,7 @@ sudo bash ./setup.sh
 # systemd
 sudo cp ./carepi_lite.service /etc/systemd/system/carepi_lite.service
 sudo cp ./carepi_reader.service /etc/systemd/system/carepi_reader.service
-sudo cp ./carepi_reader.service /etc/systemd/system/carepi_slack.service
+sudo cp ./carepi_slack.service /etc/systemd/system/carepi_slack.service
 sudo systemctl daemon-reload
 sudo systemctl enable carepi_lite
 sudo systemctl enable carepi_reader
