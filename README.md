@@ -10,3 +10,6 @@ Rails: 7.0.3
 ```bash
 $ bash https://raw.githubusercontent.com/shmn7iii/CaRePi_lite/main/setup_for_raspi.sh
 ```
+
+> 音源素材利用
+> otosozai.com https://otosozai.com/
