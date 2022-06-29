@@ -3,7 +3,7 @@
 cd ~
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y git vim python3 python3-pip
+sudo apt-get install -y git vim python3 python3-pip alsa-base alsa-utils
 
 
 # docker
@@ -13,8 +13,9 @@ sudo apt-get install -y uidmap
 dockerd-rootless-setuptool.sh install
 echo 'export PATH=/usr/bin:$PATH' > ~/.bashrc
 echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' > ~/.bashrc
-sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo setcap cap_net_bind_service=ep $HOME/bin/rootlesskit
+sudo echo 'net.ipv4.ip_unprivileged_port_start=0' > /etc/sysctl.conf
+sudo sysctl --system
 
 
 # CaRePi Lite
@@ -42,9 +43,9 @@ sed -i -e "/SLACK_APP_TOKEN/c SLACK_APP_TOKEN = $SLACK_APP_TOKEN" ~/CaRePi_lite/
 
 # API
 cd ~/CaRePi_lite
-docker-compose up -d
-docker-compose exec rails ./bin/setup
-docker-compose down
+docker compose up -d
+docker compose exec rails ./bin/setup
+docker compose down
 
 
 # Reader
