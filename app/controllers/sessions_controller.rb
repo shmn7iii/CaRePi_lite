@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     end
 
     # User取得、存在なければ作成
-    @user ||= User.find_by(student_number:) || User.create(student_number:)
+    @user = User.find_or_create_by(student_number:)
 
     # 入退室をトグル
     @user.toggle!(:entry)
